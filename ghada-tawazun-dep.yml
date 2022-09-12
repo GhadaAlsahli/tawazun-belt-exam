@@ -1,34 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tawazun-web
+  name: tawazun
   labels:
-    app: tawazun-web
-    name: ghada-alsahli
+    app: tawazun
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      app: tawazun-web
+      app: tawazun
   template:
     metadata:
       labels:
-        app: tawazun-web
+        app: tawazun
     spec:
       containers:
         - image: ghadamu/tawazun:2.0
-          name: tawazun-web 
+          name: tawazun
           env:
             - name: DB_URL
-              value: mysql
+              value: mysql-tawazun
             - name: DB_PORT
               value: '3306'  
             - name: DB_NAME
-              value: tawazun  
+              value: tawazun
             - name: DB_USERNAME
               value: root  
             - name: DB_PASSWORD
               value: DevOps2022
           ports:
-            - containerPort: 8080                        
-      
+            - containerPort: 8080
