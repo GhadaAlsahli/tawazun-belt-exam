@@ -4,7 +4,7 @@ metadata:
   name: tawazun-serv
 spec:
  selector:
-   app: tawazun
+   app: tawazun-web
  type: NodePort
  ports:
     - protocol: TCP
